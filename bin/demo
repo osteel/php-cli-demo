@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+$root = dirname(__DIR__);
+
+if (! is_file(sprintf('%s/vendor/autoload.php', $root))) {
+    $root = dirname(__DIR__, 4);
+}
+
+require sprintf('%s/vendor/autoload.php', $root);
+
+use Osteel\PhpCliDemo\Commands\Play;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$application->add(new Play());
+
+$application->run();

@@ -1,0 +1,25 @@
+{
+    "name": "osteel/php-cli-demo",
+    "description": "PHP command line tool demo",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Osteel\\PhpCliDemo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yannick Chenot",
+            "email": "yannick@yellowraincoat.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "symfony/console": "^5.0|^6.0"
+    },
+    "bin": [
+        "bin/demo"
+    ]
+}

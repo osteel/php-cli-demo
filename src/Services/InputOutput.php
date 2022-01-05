@@ -7,37 +7,26 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class InputOutput extends SymfonyStyle
 {
     /**
-     * {@inheritdoc}
-     *
-     * @param  string        $question
-     * @param  string|null   $default
-     * @param  callable|null $validator
-     * @return mixed
+     * Ask a question and return the answer.
      */
-    public function ask(string $question, string $default = null, callable $validator = null): mixed
+    public function question(string $question): string
     {
-        return parent::ask(sprintf(' ✍️  %s', $question), $default, $validator);
+        return $this->ask(sprintf(' ✍️  %s', $question));
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @param  string $message
-     * @return void
+     * Display a message in case of right answer.
      */
-    public function error($message)
-    {
-        $this->block(sprintf(' 😮  %s', $message), null, 'fg=white;bg=red', ' ', true);
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @param  string $message
-     * @return void
-     */
-    public function success($message)
+    public function right(string $message): void
     {
         $this->block(sprintf(' 🎉  %s', $message), null, 'fg=white;bg=green', ' ', true);
+    }
+
+    /**
+     * Display a message in case of wrong answer.
+     */
+    public function wrong(string $message): void
+    {
+        $this->block(sprintf(' 😮  %s', $message), null, 'fg=white;bg=red', ' ', true);
     }
 }

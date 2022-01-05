@@ -38,12 +38,12 @@ class Play extends Command
 
         $io = new InputOutput($input, $output);
 
-        $answer = (int) $io->ask(sprintf('What is %s + %s?', $term1, $term2));
+        $answer = (int) $io->question(sprintf('What is %s + %s?', $term1, $term2));
 
         if ($answer === $result) {
-            $io->success('Well done!');
+            $io->right('Well done!');
         } else {
-            $io->error(sprintf('Aww, so close. The answer was %s', $result));
+            $io->wrong(sprintf('Aww, so close. The answer was %s', $result));
         }
 
         if ($io->confirm('Play again?')) {

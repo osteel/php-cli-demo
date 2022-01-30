@@ -1,6 +1,6 @@
 {
     "name": "osteel/php-cli-demo",
-    "description": "PHP command line tool demo",
+    "description": "PHP command-line tool demo",
     "type": "library",
     "license": "MIT",
     "autoload": {

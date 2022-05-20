@@ -8,7 +8,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 
 class PlayTest extends TestCase
 {
-    public function testItDisplaysTheRightOutput()
+    public function testItDoesNotCrash()
     {
         $command = new Play();
 
